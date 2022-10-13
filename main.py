@@ -7,8 +7,9 @@ def check_point(fun):
     return fun
 
 
-def normalize_city_name(text):
-    return ""
+# Приводим название города в общий вид
+def normalize_city_name(name):
+    return name.strip().lower().replace('ё', 'е')
 
 
 def is_city_startswith_char(city, char):
