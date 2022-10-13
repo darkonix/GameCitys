@@ -1,4 +1,6 @@
-def check_list(fun):
+
+
+def check_point(fun):
     return fun
 
 
