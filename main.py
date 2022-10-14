@@ -42,5 +42,12 @@ def is_available(city, cities, **kwargs):
         return False
 
 
+def move_to_cache(city, cities, cache):
+    # Убираем из списка доступных городов
+    cities.remove(city)
+    # Перекидываем город в кэш
+    cache.add(city)
+
+
 def get_next_char(city):
     return ""
