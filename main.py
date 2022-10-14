@@ -12,7 +12,12 @@ def normalize_city_name(name):
     return name.strip().lower().replace('ё', 'е')
 
 
+# Проверка, что город начинается с нужной буквы
 def is_city_startswith_char(city, char):
+    if char is None or city.startswith(char):
+        return True
+    else:
+        print(f'Город должен начинаться с буквы {char.capitalize()}.')
     return False
 
 
