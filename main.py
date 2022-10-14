@@ -50,4 +50,13 @@ def move_to_cache(city, cities, cache):
 
 
 def get_next_char(city):
-    return ""
+    wrong_char = ("ъ", "ь", "ы", "й")
+    # Выбираем букву для следующего города
+    for char in city[::-1]:
+        if char in wrong_char:
+            continue
+        else:
+            break
+    else:
+        raise RuntimeError
+    return char
