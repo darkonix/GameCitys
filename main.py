@@ -32,5 +32,15 @@ def is_non_cached(city, cache, **kwargs):
         return False
 
 
+# Проверка, что такой город существует и он известен нам
+@check_point
+def is_available(city, cities, **kwargs):
+    if city in cities:
+        return True
+    else:
+        print("Такого города не существует в России")
+        return False
+
+
 def get_next_char(city):
     return ""
