@@ -13,6 +13,7 @@ def normalize_city_name(name):
 
 
 # Проверка, что город начинается с нужной буквы
+@check_point
 def is_city_startswith_char(city, char):
     if char is None or city.startswith(char):
         return True
@@ -21,8 +22,14 @@ def is_city_startswith_char(city, char):
     return False
 
 
-def is_non_cached(city, cache):
-    return False
+# Проверка, что город ещё не был назван
+@check_point
+def is_non_cached(city, cache, **kwargs):
+    if city not in cache:
+        return True
+    else:
+        print("Этот город уже был назван.")
+        return False
 
 
 def get_next_char(city):
