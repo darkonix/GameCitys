@@ -60,3 +60,23 @@ def get_next_char(city):
     else:
         raise RuntimeError
     return char
+
+
+# ход игрока, возвращает либо город, либо код ошибки
+def user_point(char: str, cache: set, user_say: str, cities: set):
+    city = normalize_city_name(user_say)
+    kw = {"char": char, "cache": cache, "cities": cities}
+    result_list = [x(city, **kw) for x in check_list]
+    if not result_list[0]:
+        return 0
+    elif not result_list[1]:
+        return 1
+    elif not result_list[2]:
+        return 2
+    return city
+
+
+if __name__ == '__main__':
+    # cache = set()
+    # cities = {normalize_city_name(x) for x in open("cities.txt", "r").readlines() if x.strip()}
+    pass
